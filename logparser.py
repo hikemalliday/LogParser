@@ -24,6 +24,8 @@ async def read_new_lines(file_name, previous_size):
             new_lines = file.readlines()
             for line in new_lines:
                 line = line.strip()
+                if any(substring in line for substring in ["You are thirsty", "You are hungry", "You are out of food and drink"]):
+                    continue
                 for regex, helper_func in regex_map.items():
                         match = regex.match(line)
                         if match:

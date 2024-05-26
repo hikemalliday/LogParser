@@ -2,7 +2,6 @@ import httpx
 from config import URL
 
 async def mob_death_regex(match):
-    print("MOB DEATH REGEX")
     vals = []
     for val in match:
         if 'You say, ' in val:
