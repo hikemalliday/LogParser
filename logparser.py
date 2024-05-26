@@ -1,11 +1,8 @@
-# WE CREATED THIS MODULE SO WE CAN BEING TO BUILD THE AWATCH PARSE WITHOUT TAMPERING WITH LOGPARSER.PY
 import re
 import os
 from watchfiles import awatch
-import helper
 import regex_helper
 from config import parse_started, parse_flag, FILE_NAME
-import asyncio
 
 regex_map = {
     re.compile(r"\[(.*?)\] (.*?) has fallen by the hands of a mere mortal!"): regex_helper.mob_death_regex,
@@ -53,7 +50,6 @@ async def logparser():
     while parse_flag["run"] == True:
         async for changes in awatch('C:/RoT/logs'):
             print(FILE_NAME)
-            print(changes)
             change = None
             file_name = None
             for item in changes:
