@@ -9,6 +9,7 @@ regex_map = {
     re.compile(r"\[(.*?)\] (?:(?!The).)*?The ground beneath your feet tremble as something within (.*?) awakens!"): regex_helper.mob_spawn_regex,
 }
 
+
 async def read_new_lines(file_name, previous_size):
     try:
         with open(file_name, 'r') as file:
